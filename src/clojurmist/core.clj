@@ -1,6 +1,7 @@
-(ns clojurmist.core)
+(ns clojurmist.core
+  (:use [apparatus config cluster]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(def myinstance 
+  (delay  (instance (config))))
+
+
