@@ -2,10 +2,16 @@
   (:use [apparatus config cluster]))
 
 (def myinstance 
-  (delay  (instance (config))))
+  (instance (config)))
 
 (def mylist (get-list "mylist"))
 
 (def mymap (get-map "mymap"))
 
-(println (count mylist))
+(def addressbook (get-list "addressbook"))
+
+
+(defn -main [& args]
+       (println (count mylist))
+       (println "addressbook: " (count addressbook) " entries.")
+       )
